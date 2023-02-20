@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WebApplication2</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebApplication2.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <div class="header py-3 container d-flex justify-content-between align-items-center">
+            <div class="logo d-flex align-items-center">
+                <img src="~/Images/logo-5.png" 
+                     alt="Logotype" 
+                     aria-label="Logotype site"/>
+                <a class="ms-2 fs-4 nav-link text-dark border-bottom"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">
+                    Туры по России
+                </a>
+            </div>
+            <div class="header__info d-flex align-items-start gap-3 ">
+                <div class="header__contacts d-flex flex-column align-items-end">
+                    <div class="fs-6 fw-bold">
+                        +7 495 104-52-96
+                    </div>
+                    <div>
+                        <img class="icon p-0" 
+                             src="~/Images/Socials/whatsapp_.png" 
+                             alt="whatsapp" 
+                             aria-label="messengers wa"/>
+                        <img class="icon p-0" 
+                             src="~/Images/Socials/telegram.png" 
+                             alt="telegram" 
+                             aria-label="messengers tg"/>
+                    </div>
+                </div>
+               <div class="header__calendar">
+                <div class="d-flex">
+                    <div>
+                        Пн-Пт:
+                    </div>
+                    <div class="ps-2">
+                        10:00-20:00
+                    </div>
+                </div>
+                <div class="d-flex mt-2">
+                    <div>
+                        Cб:
+                    </div>
+                    <div class="ps-2">
+                        10:00-18:00
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+        </div>
+        <nav class="navbar  
+        bg-primary 
+        bg-gradient 
+        navbar-expand-sm 
+        navbar-toggleable-sm 
+        navbar-dark 
+        border-bottom 
+        border-primary 
+        box-shadow ">
+            <div class="container">
+                <div class="navbar-collapse  collapse d-sm-inline-flex">
+                    <ul class="navbar-nav justify-content-around text-uppercase fs-5 flex-grow-1">
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-light"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Tours">
+                                Туры
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-light"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Instructors">
+                                Инструкторы
+                            </a>
+                        </li>
+                        <li class="nav-item px-3">
+                            <a class="nav-link text-light"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="AboutUs">
+                                О компании
+                            </a>
+                        </li>
+                         <li class="nav-item px-3">
+                             <a class="nav-link text-light"
+                                asp-area=""
+                                asp-controller="Home"
+                                asp-action="Photosession">
+                                 Фотосессия
+                             </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="">
+        <main role="main" style="min-height: 1000px">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer bg-dark bg-gradient text-muted pb-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div>&copy; 2023 - HorseTours</div>
+            <div class="d-flex justify-content-between gap-3">
+                <div class="d-flex flex-column align-items-center">
+                    <div>Вконтакте</div>
+                    <img class="icon p-0" 
+                         src="~/Images/Socials/vk.png" 
+                         alt="vkontakte" 
+                         aria-label="vk"/>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div>Instagram</div>
+                    <img class="icon p-0"
+                         src="~/Images/Socials/instagram.png" 
+                         alt="instagram" 
+                         aria-label="inst"/>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div>Telegram</div>
+                    <img class="icon p-0" 
+                         src="~/Images/Socials/telegram.png" 
+                         alt="telegram" 
+                         aria-label="tg"/>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div>Почта</div>
+                    <img class="icon p-0" 
+                         src="~/Images/Socials/mail.png" 
+                         alt="mail" 
+                         aria-label="email"/>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-mask/jquery.maskedinput.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

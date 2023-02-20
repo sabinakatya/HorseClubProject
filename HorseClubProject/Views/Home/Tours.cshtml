@@ -1,0 +1,160 @@
+﻿@model HorseClubLibrary.Model.ViewModel.TourViewModel
+@{
+    ViewData["Title"] = "Our tours";
+}
+
+<div class="container">
+    <div class="row row-cols-4 row-cols-lg-4 ">
+        @foreach (var item in Model.Tours)
+        {
+            <div class="col my-4">
+                <div id="tourModal" class="card bg-light bg-opacity-50 p-3" style="height: 500px;">
+
+                    <img src="~/Images/Tours/@item.TourImage"
+                         class="card-img-top"
+                         alt="@item.TourName">
+
+                    <div class="card-body d-flex flex-column text-start">
+                        <h5 class="card-title text-dark">
+                            @item.TourName
+                        </h5>
+                        <h5 class="card-title text-dark">
+                            @item.TourPrice
+                        </h5>
+                        <h5 class="card-title text-dark">
+                            @item.DurationTour.DurationName
+                        </h5>
+                        <a href="#" class="btn m-1 b-0 btn-outline-info"
+                           onclick="showModal(@item.Id)"
+                           data-bs-toggle="modal"
+                           data-bs-target="#GetTour">
+                            Заказать
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="modal fade"
+     id="GetTour"
+     tabindex="-1"
+     aria-labelledby="orderTour"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form asp-controller="Home"
+                  asp-action="CreateOrder">
+                <div class="modal-header text-center justify-content-center">
+                    <h2 class="modal-title"
+                        id="TourName">
+                        Забронировать тур
+                    </h2>
+                </div>
+
+                <input type="text"
+                       id="GetIdTour"
+                       name="tourId"
+                       class="is-hidden">
+
+                <div class="modal-body text-start">
+                    <div class="row m-3">
+                        <div class="form-group">
+                            <label class="m-1"
+                                   for="name">
+                                Имя *
+                            </label>
+                            <input type="text"
+                                   class="form-control py-2 fs-5"
+                                   id="name"
+                                   placeholder="Имя"
+                                   required="required"
+                                   name="customerName">
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="form-group">
+                            <label class="m-1"
+                                   for="phone">
+                                Телефон *
+                            </label>
+                            <input type="text"
+                                   class="form-control py-2 fs-5"
+                                   id="phone"
+                                   placeholder="Номер телефона"
+                                   required="required"
+                                   name="customerPhone">
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="form-group">
+                            <label class="m-1"
+                                   for="mail">
+                                Почта *
+                            </label>
+                            <input type="text"
+                                   class="form-control py-2 fs-5"
+                                   id="mail"
+                                   placeholder="Почта"
+                                   required="required"
+                                   name="customerEmail">
+                        </div>
+                    </div>
+                    <div class="row m-3">
+                        <div class="form-group">
+                            <label class="m-1"
+                                   for="comment">
+                                Сообщение *
+                            </label>
+                            <input type="text"
+                                   class="form-control py-2 fs-5"
+                                   id="comment"
+                                   placeholder="Комментарий"
+                                   maxlength="255"
+                                   required="required"
+                                   name="customerMessage">
+                        </div>
+                    </div>
+                    <div class="modal-footer d-flex flex-column align-items-center">
+                        <div class="row mx-5 text-center">
+                            <button type="submit"
+                                    class="btn btn-info text-light fs-4">
+                                Оставить
+                            </button>
+                            <p class="fs-6 p-2">
+                                * - обязательные поля
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        const showModal = function(id)
+        {
+            $.ajax({
+                type: "POST",
+                url: "/Home/GetTour",
+                data: { id:id},
+                success: function(tour){
+                  $("#GetTour").modal('show');
+                  $("#TourName").text(tour.tourName);
+                  $("#GetIdTour").val('').val(id);
+                }
+            })
+        }
+        
+        $(function(){
+          $("#phone").mask("8(999) 999-99-99");
+        });
+        
+    </script>
+}

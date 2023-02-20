@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseClubProject", "HorseClubProject\HorseClubProject.csproj", "{162F46E5-E5B8-4F9D-BA9C-EBCAE68DA3D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorseClubLibrary", "HorseClubLibrary\HorseClubLibrary.csproj", "{551F063B-2053-405A-A70D-05EF19607515}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{162F46E5-E5B8-4F9D-BA9C-EBCAE68DA3D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{162F46E5-E5B8-4F9D-BA9C-EBCAE68DA3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{162F46E5-E5B8-4F9D-BA9C-EBCAE68DA3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{162F46E5-E5B8-4F9D-BA9C-EBCAE68DA3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{551F063B-2053-405A-A70D-05EF19607515}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{551F063B-2053-405A-A70D-05EF19607515}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{551F063B-2053-405A-A70D-05EF19607515}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{551F063B-2053-405A-A70D-05EF19607515}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,98 @@
+﻿@model HorseClubLibrary.Model.Entities.Tours
+
+@{
+    ViewData["Title"] = "Admin edit data";
+}
+
+<div class="container">
+    <form asp-controller="Admin"
+          asp-action="EditTour"
+          asp-route-id="@Model.Id">
+        <div class="modal-header text-center justify-content-center">
+            <h2 class="modal-title">
+                Изменить тур
+            </h2>
+        </div>
+
+        <div class="modal-body text-start">
+            <div class="row m-3">
+                <div class="form-group">
+                    <label class="m-1"
+                           asp-for="@Model.TourName">
+                        Название тура
+                    </label>
+                    <input type="text"
+                           asp-for="@Model.TourName"
+                           class="form-control py-2 fs-5"
+                           placeholder="Название тура"
+                           required="required">
+                </div>
+            </div>
+            <div class="row m-3">
+                <div class="form-group">
+                    <label class="m-1"
+                           asp-for="@Model.TourPrice">
+                        Цена тура
+                    </label>
+                    <input type="text"
+                           asp-for="@Model.TourPrice"
+                           class="form-control py-2 fs-5"
+                           placeholder="Цена тура"
+                           required="required">
+                </div>
+            </div>
+
+            <div class="row m-3 is-hidden">
+                <div class="form-group">
+                    <label class="m-1"
+                           asp-for="@Model.TourImage">
+                        Цена тура
+                    </label>
+                    <input type="text"
+                           asp-for="@Model.TourImage"
+                           class="form-control py-2 fs-5"
+                           value="altai_tour.png"
+                           required="required">
+                </div>
+            </div>
+
+            <div class="row m-3 is-hidden">
+                <div class="form-group">
+                    <label class="m-1"
+                           asp-for="@Model.DurationTourId">
+                        Цена тура
+                    </label>
+                    <input type="text"
+                           asp-for="@Model.DurationTourId"
+                           class="form-control py-2 fs-5"
+                           placeholder="1"
+                           required="required"
+                           value="1">
+                </div>
+            </div>
+
+            <div class="row m-3">
+                <div class="form-group">
+                    <label class="m-1"
+                           asp-for="@Model.TourDescription">
+                        Описание тура
+                    </label>
+                    <input type="text"
+                           asp-for="@Model.TourDescription"
+                           class="form-control py-2 fs-5"
+                           placeholder="Описание тура"
+                           required="required">
+                </div>
+            </div>
+            <div class="modal-footer d-flex flex-column align-items-center">
+                <div class="row mx-5 text-center">
+                    <div class="form-group">
+                        <input type="submit"
+                               class="btn btn-info text-light fs-4"
+                               value="Изменить данные">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

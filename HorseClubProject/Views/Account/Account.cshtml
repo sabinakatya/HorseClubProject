@@ -1,0 +1,58 @@
+﻿@model HorseClubLibrary.Model.Entities.Users
+@{
+    ViewData["Title"] = "Authorization";
+}
+
+<div class="container d-flex my-5 justify-content-center">
+    <form asp-controller="Account"
+          asp-action="Login"
+          class="w-50 border p-3 fs-4 form">
+        <div class="row text-center">
+            <h2>
+                Вход в личный кабинет
+            </h2>
+            <div class="decor-line"></div>
+        </div>
+        
+        <div class="row m-3">
+            <div class="form-group">
+                <label for="loginUser"
+                       class="fw-bold m-1"
+                       asp-for="LoginUser">
+                    Логин администратора
+                </label>
+                <input type="text"
+                       class="form-control py-2 fs-5"
+                       name="loginUser"
+                       id="loginUser"
+                       required="required"
+                       placeholder="Введите Ваш логин...">
+            </div>
+        </div>
+        
+        <div class="row m-3">
+            <div class="form-group">
+                <label for="passwordUser"
+                       class="fw-bold m-1"
+                       asp-for="PasswordUser">
+                    Пароль администратора
+                </label>
+                <input type="text"
+                       class="form-control py-2 fs-5"
+                       name="passwordUser"
+                       id="passwordUser"
+                       required="required"
+                       minlength="6"
+                       placeholder="Введите Ваш пароль...">
+            </div>
+        </div>
+        
+        <div class="row mx-5 text-center">
+            <button type="submit" 
+                    class="btn btn-primary fw-bold fs-4">
+                Войти
+            </button>
+        </div>
+        
+    </form>
+</div>

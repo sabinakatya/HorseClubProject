@@ -1,0 +1,36 @@
+﻿@model HorseClubLibrary.Model.Entities.Tours
+@{
+	ViewBag.Title = "Удаление тура";
+}
+<div class="container py-5">
+	<dl class="dl-horizontal">
+		<dt>Название тура</dt>
+		<dd>
+			@Html.DisplayFor(model => model.TourName)
+		</dd>
+		<dt>Цена тура</dt>
+		<dd>
+			@Html.DisplayFor(model => model.TourPrice)
+		</dd>
+		<dt>Описание тура</dt>
+		<dd>
+			@Html.DisplayFor(model => model.TourDescription)
+		</dd>
+		<dt>Изображение тура</dt>
+		<dd>
+			@Html.DisplayFor(model => model.TourImage)
+		</dd>
+		<dt>Продолжительность тура</dt>
+		<dd>
+			@Html.DisplayFor(model => model.DurationTour.DurationName)
+		</dd>
+	</dl>
+	<div>
+		<form asp-controller="Admin" asp-action="Delete" method="post">
+			<div class="form-group">
+				<input type="submit" class="btn btn-danger" value="Удалить" />
+			</div>
+		</form>
+	</div>
+</div>
+

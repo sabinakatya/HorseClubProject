@@ -1,0 +1,59 @@
+﻿@model HorseClubLibrary.Model.ViewModel.OrderViewModel
+@{
+    ViewData["Title"] = "Admin Orders";
+}
+
+<div class="container py-5">
+    <table class="table text-center border">
+        <tr>
+            <td class="fs-6 fw-bold">№</td>
+            <td class="fs-6 fw-bold">ФИО</td>
+            <td class="fs-6 fw-bold">Телефон</td>
+            <td class="fs-6 fw-bold">Почта</td>
+            <td class="fs-6 fw-bold">Статус</td>
+            <td class="fs-6 fw-bold">Тур</td>
+        </tr>
+    @foreach (var item in Model.Orders)
+    {
+            if (item.Id % 2 == 0)
+            {
+                <tr class="bg-light">
+                    <td class="fw-bold">@item.Id</td>
+                    <td>@item.CustomerName</td>
+                    <td>
+                        <a href="tel:@item.CustoerPhone">
+                            @item.CustoerPhone
+                        </a>
+                    </td>
+                    <td>
+                        <a href="tel:@item.CustomerEmail">
+                            @item.CustomerEmail
+                        </a>
+                    </td>
+                    <td style="color: #4ad92e;">@item.Status.StatusName</td>
+                    <td>@item.Tour.TourName</td>
+                </tr>
+            }
+            else
+            {
+                <tr class="bg-white">
+                    <td class="fw-bold">@item.Id</td>
+                    <td>@item.CustomerName</td>
+                    <td>
+                        <a href="tel:@item.CustoerPhone">
+                            @item.CustoerPhone
+                        </a>
+                    </td>
+                    <td>
+                        <a href="tel:@item.CustomerEmail">
+                            @item.CustomerEmail
+                        </a>
+                    </td>
+                    <td style="color: #4ad92e;">@item.Status.StatusName</td>
+                    <td>@item.Tour.TourName</td>
+                </tr>
+            }
+
+    }
+</table>
+</div>
